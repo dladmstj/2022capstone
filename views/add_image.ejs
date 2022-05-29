@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <div class="searchArea">
+        <form>
+          <input type="search" placeholder="search">
+          <span>검색</span>
+        </form>
+      </div>
+      <ul class="nav">
+        <li> <a href="/" class="home">HOME</a></li> 
+        <li> <a href="/webcam_emotion" class="feel">오늘 기분 어때?</a></li>
+        <li> <a href="/education_emotion" class="qu"><b>표정 맞추기</b></a></li>
+        <li> <a href="">Contact</a></li>
+      </ul>
+      </div>
+    </header>
+
+    <div class="image_container">
+      <img src="" alt="imaggg" id="img" style="width:500px; height:500px; visibility:hidden"/>
+    </div>
+    <input type="file" name="img" id="image_input" accept="image/*" />
+    <button class="backBtn">뒤로가기</button>
+  </body>
+
+  <script src="dist/face-api.js"></script>
+  <script src="src/add_image.js"></script>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-2.1.1.min.js"
+  ></script>
+</html>

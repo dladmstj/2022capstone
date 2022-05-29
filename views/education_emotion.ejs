@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="style2.css" />
+    <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="searchArea">
+        <form>
+          <input type="search" placeholder="search">
+          <span>검색</span>
+        </form>
+      </div>
+      <ul class="nav">
+        <li> <a href="/" class="home">HOME</a></li> 
+        <li> <a href="/webcam_emotion" class="feel">오늘 기분 어때?</a></li>
+        <li> <a href="/education_emotion" class="qu"><b>표정 맞추기</b></a></li>
+        <li> <a href="">Contact</a></li>
+      </ul>
+      </div>
+    </header>
+    <script>
+      swal("표정을 추측해보세요!")
+    </script>
+    <div class="image_container" style= "width:1200px; height: 450px; background-color: rgb(223, 223, 223); float: left;">
+      <img src="" alt="imaggg" id="img" style="width:900px; height:450px; margin: center;">
+    </div>
+    <div id="CCTVContainer">
+      <video id="inputCCTV" autoplay muted playsinline style="width: 250px; "></video>
+    </div>
+    
+    <br><br>
+
+    <div class="btn_container" style="clear: both; margin-top: 150px;">
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);" class="emotionBtn">무표정</button>
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);"class="emotionBtn">행복</button>
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);" class="emotionBtn">슬픔</button>
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);" class="emotionBtn">분노</button>
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);" class="emotionBtn">공포</button>
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);" class="emotionBtn">혐오</button>
+        <button style="width : 90px; height: 40px; background-color: rgb(247, 241, 197);" class="emotionBtn">놀라움</button>
+    </div>
+    <br>
+    <div class="btn_container2" style=" align-content: right;">
+        <button class="nextBtn">다음으로</button>
+        <button class="stopBtn">중단</button>
+    </div>
+
+    <button class="plusBtn">사진 추가</button>
+  </body>
+
+  <script src="dist/face-api.js"></script>
+  <script src="src/education_emotion.js"></script>
+  <script
+    type="text/javascript"
+    src="https://code.jquery.com/jquery-2.1.1.min.js"
+  ></script>
+</html>

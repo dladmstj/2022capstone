@@ -1,0 +1,65 @@
+
+<!doctype html>
+<html lang="ko">
+  <head>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style1.css" />
+    <link rel="stylesheet" href="style2.css" />
+  </head>
+  <body>
+    <header>
+      <img src="mainimage/logo.png" width="250px">
+      <ul class="nav">
+        <li> <a href="/" class="home"><b>HOME</b></a></li> 
+        <li> <a href="/webcam_emotion" class="feel">오늘 기분 어때?</a></li>
+        <li> <a href="/education_emotion" class="qu">표정 맞추기</a></li>
+        <li> <a href="">Contact</a></li>
+      </ul>
+    </header>
+      
+    <div class="slideshow-container">
+      <div class="mySlides fade">
+        <img src="mainimage/s1.jpg">
+      </div>
+
+      <div class="mySlides fade">
+          <img src="mainimage/slide6.jpg" >
+      </div>
+      
+      <div class="mySlides fade">
+        <img src="mainimage/slide2.jpg">
+      </div>
+    </div>
+    <br>
+      
+    <div style="text-align:center">
+      <span class="dot"></span> 
+      <span class="dot"></span> 
+      <span class="dot"></span>
+    </div>
+     
+      <script>
+
+        var slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            var i;
+            var slides = document.getElementsByClassName("mySlides");
+            var dots = document.getElementsByClassName("dot");
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none"; 
+                
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {slideIndex = 1}    
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex-1].style.display = "block";  
+            dots[slideIndex-1].className += " active";
+            setTimeout(showSlides, 2000);
+        }
+    </script>
+  </body>
+</html>
