@@ -1,0 +1,5 @@
+node_modules/
+public/images/
+public/media/
+public/dist/
+public/weights/
