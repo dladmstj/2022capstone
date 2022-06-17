@@ -16,7 +16,7 @@ const camera = new THREE.PerspectiveCamera(
   1000
 );
 
-const renderer = new THREE.WebGLRenderer();
+const renderer = new THREE.WebGLRenderer({ alpha: true });
 renderer.setSize(monitorRect.width / 2, monitorRect.height / 2, false);
 renderer.setClearColor("rgb(135,206,250)", 0.0);
 document.querySelector("#monitor").appendChild(renderer.domElement);
@@ -28,8 +28,8 @@ scene.add(cube);
 
 camera.position.z = 5;
 
-document.querySelector("canvas").style.width = `${monitor.width}px`;
-document.querySelector("canvas").style.height = `${monitor.height}px`;
+document.querySelector("canvas").style.width = `${monitorRect.width}px`;
+document.querySelector("canvas").style.height = `${monitorRect.height}px`;
 
 let result = null;
 
@@ -46,11 +46,11 @@ function animate() {
     cube.scale.set(scale_num, scale_num, scale_num);
 
     //위치 변경
-    cube.position.set((tmp[30].x - 300) / 60, (200 - tmp[30].y) / 50);
+    cube.position.set((tmp[19].x - 300) / 60, (200 - tmp[19].y) / 50);
 
     let rotate_num = tmp[39].x - tmp[36].x - (tmp[45].x - tmp[42].x);
     console.log(Math.round(rotate_num) / 2);
-    cube.rotation.y = -Math.round(rotate_num / 2) * 4.5 * 2;
+    cube.rotation.y = -Math.round(rotate_num / 5) * 4.5 * 5;
   }
 
   renderer.render(scene, camera);
