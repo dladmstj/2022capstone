@@ -1,32 +1,33 @@
 <!DOCTYPE html>
 <html>
   <head>
+    
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="style2.css" />
     <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   </head>
   <body>
     <header>
-      <div class="searchArea">
-        <form>
-          <input type="search" placeholder="search">
-          <span>검색</span>
-        </form>
-      </div>
+      <img src="mainimage/logo.png" >
       <ul class="nav">
         <li> <a href="/" class="home">HOME</a></li> 
         <li> <a href="/webcam_emotion" class="feel">오늘 기분 어때?</a></li>
-        <li> <a href="/education_emotion" class="qu"><b>표정 맞추기</b></a></li>
-        <li> <a href="">Contact</a></li>
+        <li> <a href="/education_emotion" class="qu"><b>표정 맞히기</b></a></li>
+        <li> <a href="/contact">Contact</a></li>
       </ul>
-      </div>
     </header>
     <script>
-      swal("표정을 추측해보세요!")
+      swal("사진 속 인물의 감정을 맞혀보세요!")
     </script>
-    <div class="image_container" style= "width:1200px; height: 450px; background-color: rgb(223, 223, 223); float: left;">
-      <img src="" alt="imaggg" id="img" style="width:900px; height:450px; margin: center;">
+
+    <div style="float: left;  margin-left: 15px; margin-top: 15px;">
+      <button class="plusBtn"><h1>+</h1></button>
     </div>
-    <div id="CCTVContainer">
+    <div class="image_container" style= "width:602px; height: 401px; background-color: white; float: left;">
+      <img src="" alt="imaggg" id="img" style="width:600px; height:400px; margin: center;">
+    </div>
+    <div id="CCTVContainer" style="float: right;  margin-top: 0px;">
+      
       <video id="inputCCTV" autoplay muted playsinline style="width: 250px; "></video>
     </div>
     
@@ -47,7 +48,7 @@
         <button class="stopBtn">중단</button>
     </div>
 
-    <button class="plusBtn">사진 추가</button>
+    
   </body>
 
   <script src="dist/face-api.js"></script>
@@ -56,4 +57,5 @@
     type="text/javascript"
     src="https://code.jquery.com/jquery-2.1.1.min.js"
   ></script>
+ 
 </html>
