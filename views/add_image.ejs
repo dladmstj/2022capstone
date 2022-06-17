@@ -1,30 +1,32 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="style2.css" />
+    <script src="https://unpkg.com/sweetalert@2.1.2/dist/sweetalert.min.js"></script>
   </head>
   <body>
     <header>
-      <div class="searchArea">
-        <form>
-          <input type="search" placeholder="search">
-          <span>검색</span>
-        </form>
-      </div>
+      <img src="mainimage/logo.png">
       <ul class="nav">
         <li> <a href="/" class="home">HOME</a></li> 
         <li> <a href="/webcam_emotion" class="feel">오늘 기분 어때?</a></li>
-        <li> <a href="/education_emotion" class="qu"><b>표정 맞추기</b></a></li>
-        <li> <a href="">Contact</a></li>
+        <li> <a href="/education_emotion" class="qu"><b>표정 맞히기</b></a></li>
+        <li> <a href="/contact">Contact</a></li>
       </ul>
-      </div>
     </header>
 
-    <div class="image_container">
-      <img src="" alt="imaggg" id="img" style="width:500px; height:500px; visibility:hidden"/>
+    <script>
+      swal("사진을 직접 추가해 감정을 측정해보세요!")
+    </script>
+
+    <div class="image_container" style="margin-left: auto; margin-right: auto;">
+      <img src="" alt="imaggg" id="img" style="width:600px; height:400px; visibility:hidden"/>
     </div>
-    <input type="file" name="img" id="image_input" accept="image/*" />
-    <button class="backBtn">뒤로가기</button>
+    <div style="margin-top: 20px;">
+      <input type="file" name="img" id="image_input" accept="image/*" />
+      <button class="backBtn">뒤로가기</button>
+    </div>
   </body>
 
   <script src="dist/face-api.js"></script>
