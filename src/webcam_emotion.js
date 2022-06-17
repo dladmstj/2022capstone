@@ -110,7 +110,10 @@ function giveAnswer() {
   window.speechSynthesis.speak(msg);
 
   document.getElementById("imgid").style.visibility = "visible";
-
+  document.getElementById("btn").style.visibility = "visible";
+  document.getElementById("btn1").style.visibility = "visible";
+  document.getElementById("btn2").style.visibility = "visible";
+   
   switch (maxIndex) {
     case 0:
       document.getElementById("imgid").src = "ddarahae/neutral.png";
@@ -144,7 +147,7 @@ function giveAnswer() {
 
   swal({
     title: emotions[maxIndex],
-    text: "아래 표정을 따라해보세요",
+    text: "다음 표정을 따라해보세요",
     closeOnClickOutside: false,
   });
 }
