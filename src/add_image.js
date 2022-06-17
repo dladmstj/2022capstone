@@ -7,7 +7,7 @@ faceapi.loadFaceExpressionModel("/weights/");
 
 setEvent();
 
-let emotions = ["무표정", "행복", "슬픔", "분노", "공포", "혐오", "놀라움"];
+let emotions = ["무표정이에요", "행복해보여요!", "슬퍼보여요", "화를 내고 있어요", "무서워보여요", "혐오스러운 표정이에요", "놀라워하고 있어요!"];
 
 async function submit() {
   const formData = new FormData();
@@ -50,7 +50,12 @@ async function changeImg() {
       maxIndex = i;
     }
   }
-  alert(emotions[maxIndex]);
+
+  var text = emotions[maxIndex];
+  var msg = new SpeechSynthesisUtterance();
+  msg.text = text;
+  window.speechSynthesis.speak(msg);
+  swal(emotions[maxIndex]);
 
   const dataTranster = new DataTransfer();
   imageInput.files = dataTranster.files;
