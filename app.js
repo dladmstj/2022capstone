@@ -58,6 +58,14 @@ app.get("/education_emotion", async (req, res) => {
   }
 });
 
+app.get("/contact", async (req, res) => {
+  try {
+    res.render("contact.ejs");
+  } catch (err) {
+    console.error(err);
+  }
+});
+
 app.get("/img-title", (req, res) => {
   try {
     fs.readdir(imageDirectory, (err, files) => {
@@ -79,14 +87,6 @@ app.post("/upload", upload.single("img"), async (req, res) => {
         title: files.length,
       });
     });
-  } catch (err) {
-    console.error(err);
-  }
-});
-
-app.get("/test", async (req, res) => {
-  try {
-    res.render("test.ejs");
   } catch (err) {
     console.error(err);
   }
