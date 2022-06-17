@@ -115,6 +115,8 @@ function beep() {
 let num = 0;
 let cnt = 0;
 let count = 0;
+let cnt2 = 0;
+let count2 = 0;
 async function onCCTV() {
   let check_diff;
   let result = null;
@@ -126,6 +128,7 @@ async function onCCTV() {
   if (result != undefined) {
     //console.log(result.landmarks["_positions"]);
     faceMove(result.landmarks["_positions"]);
+    faceMove2(result.landmarks["_positions"]);
   } else {
     //console.log("얼굴 일부분 감지 안됨");
     cnt = 0;
@@ -133,7 +136,7 @@ async function onCCTV() {
     count += num;
     //console.log("num:", num);
     if (num == 1) {
-      console.log("깜빡인 횟수:", count);
+      //console.log("깜빡인 횟수:", count);
       if (count == 6) {
         beep();
         alert("경고! 잦은 눈깜빡임이 의심됩니다");
@@ -166,9 +169,9 @@ function faceMove(result) {
     //눈안감음
 
     num = 0;
-    console.log("눈 뜸");
+    //console.log("눈 뜸");
     cnt++;
-    console.log(cnt);
+    //console.log(cnt);
     if (cnt > 40) {
       beep();
       alert("경고! 장시간 눈 깜빡임이 없습니다");
@@ -178,5 +181,34 @@ function faceMove(result) {
       //3초 넘게 깜빡임 없으면 num 초기화
       count = 0;
     }
+  }
+}
+
+function faceMove2(result) {
+  eye_diff = result[39].x - result[36].x - (result[45].x - result[42].x);
+  if (
+    Math.abs(result[39].x - result[36].x - (result[45].x - result[42].x)) > 8
+  ) {
+    let check_diff;
+    if (eye_diff > 0) {
+      check_diff = cnt2;
+      cnt2 = 1;
+      if (check_diff !== cnt2) {
+        count2++;
+      }
+    }
+    if (eye_diff < 0) {
+      check_diff = cnt2;
+      cnt2 = -1;
+      if (check_diff !== cnt2) {
+        count2++;
+      }
+    }
+  }
+  //console.log(count);
+  if (count2 >= 2 && count2 % 5 == 0) {
+    count2 = 0;
+    alert("경고! 이상행동이 관찰되었습니다.");
+    beep();
   }
 }
